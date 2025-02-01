@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html
+<head>
+<link href="../STYLE/HomeSheet.css" rel="stylesheet"  />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="../SCRIPT/MenuScript.js">
+</script>
+<title>SIGN UP</title>
+</head>
+
+<body style="z-index:1;">
+
+
+	<header class="header">
+        <div class="header__container">
+            <div class="header__logo">
+                <img src="../RESOURCES/images.jpeg" alt="LifeFlow Logo" height="80">
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="Home.html" class="active">Home</a></li>
+                    <li><a href="SignUp.html">Sign Up</a></li>
+                    <li><a href="Login.html">Log In</a></li>
+                    <li><a href="./About Us.html">About Us</a></li>
+                    <li><a href="./CONTACT US.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+
+
+    
+
+
+
+<script type="text/javascript">
+	
+	function validateForm() {
+    var x = document.forms["signing"]["name"].value;
+   	var y = document.forms["signing"]["blood"].value;
+   	var z = document.forms["signing"]["Mobile"].value;
+   	var a = document.forms["signing"]["email"].value;
+   	var b = document.forms["signing"]["Username"].value;
+   	var c = document.forms["signing"]["Password"].value;
+   	var d = document.forms["signing"]["DID"].value;
+   	var e = document.forms["signing"]["hosptialWork"].value;
+    if (x == "" ||y == "" ||z == "" ||a == "" ||b == "" ||c == ""||d == ""||e == "" ) {
+        alert("All Fields are Mandatory");
+        return false;
+    }
+   
+}
+</script>
+<center>
+<div id="main" style=" z-index:1 ;position: relative; top: 150px;">
+<h style="font-size:64px; font-family:'Segoe UI Symbol'; color:rgb(255,0,0);">SIGN UP(Doctor)</h>
+<div id="form">
+<form action="signUp.html" name="signing" span class="required" onsubmit="validateForm()">
+	<label >Name</label><br>
+	<input type="text" id="textbox"  name="name" ><br><br>
+	<label >Blood Group</label><br>
+	<input type="text" id="textbox" name="blood" ><br><br>
+	<label >Mobile</label><br>
+	<input type="Mobile" id="textbox" name="Mobile" ><br><br>
+	<label >E-Mail</label><br>
+	<input type="email" id="textbox" id="mail" name="email" required ><br><br>
+	<label >Doctor ID</label><br>
+	<input type="text" name="DID" id="textbox" ><br><br>
+	<label >Hospital Working</label><br>
+	<input type="text" name="hosptialWork" id="textbox" ><br><br>
+	<label >Username</label><br>
+	<input type="Username" id="textbox" id="uname" name="Username"><br><br>
+	<label >Password</label><br><br>
+	<input id="textbox"  type="Password" name="Password"><br><br>
+	<input id="submit" id="but" type="submit" name="submit" Value="Submit">
+	</form>
+
+</div>
+</div>
+</center>
+</body>
+</html>

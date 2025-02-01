@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="../STYLE/HomeSheet.css" rel="stylesheet" />
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="../SCRIPT/MenuScript.js"></script>
+    <title>SIGN UP</title>
+    <style>
+
+    </style>
+    <script type="text/javascript">
+        function validateForm() {
+    var form = document.forms["signing"];
+    var inputs = form.querySelectorAll("input");
+
+    var isValid = true;
+
+    inputs.forEach(function(input) {
+        if (input.type !== "submit") {
+            input.style.borderColor = "red"; // Change color to red after clicking submit
+
+            if (input.value.trim() === "") {
+                input.style.border = "2px solid red";
+                isValid = false;
+            } else {
+                input.style.border = "2px solid black"; // Reset to normal if filled
+            }
+        }
+    });
+
+    if (!isValid) {
+        alert("All Fields are Mandatory");
+        return false;
+    }
+
+    // Redirect to home page after successful validation
+    window.location.href = "Home.html";
+    return false; // Prevent default form submission
+}
+
+    </script>
+</head>
+
+<body style="z-index:1;">
+    <header class="header">
+        <div class="header__container">
+            <div class="header__logo">
+                <img src="../RESOURCES/images.jpeg" alt="LifeFlow Logo" height="80">
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="Home.html" class="active">Home</a></li>
+                    <li><a href="SignUp.html">Sign Up</a></li>
+                    <li><a href="Login.html">Log In</a></li>
+                    <li><a href="./About Us.html">About Us</a></li>
+                    <li><a href="./CONTACT US.html">Contact Us</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <div id="main" style="z-index:1;">
+        <h1 style="font-size:64px; font-family:'Segoe UI Symbol'; color:rgb(255,0,0); position: relative; top: 50px;">SIGN UP</h1>
+
+        <div id="quote" style="top: 270px; font-weight:bold; font-size:40px; left:800px; padding:0px 0px; width:600px">
+            "Sign up today and save lives! (But not every day—your body needs time to regenerate.)"
+        </div>
+
+        <form name="signing" onsubmit="return validateForm()" style="position: relative; top: 50px;">
+            <label>Name</label><br>
+            <input type="text" name="name" style=" width: 400px;
+            height: 50px;"><br><br>
+
+            <label>Blood Group</label><br>
+            <input type="text" name="blood"    style=" width: 400px;
+            height: 50px;"
+        ><br><br>
+
+            <label>Mobile</label><br>
+            <input type="tel" name="Mobile" style=" width: 400px;
+            height: 50px;"><br><br>
+
+            <label>E-Mail</label><br>
+            <input type="email" name="email" required style=" width: 400px;
+            height: 50px;"><br><br>
+
+            <label>Username</label><br>
+            <input type="text" name="Username" style=" width: 400px;
+            height: 50px;"><br><br>
+
+            <label>Password</label><br>
+            <input type="password" name="Password"style=" width: 400px;
+            height: 50px;"><br><br>
+
+            <input type="submit" value="Submit"style=" width: 400px;
+            height: 50px; ">
+        </form>
+
+        <br><br>
+        Once you sign up, we will ask you to enter details such as your health records and nearest registered blood bank. Blood donation requests will appear on your dashboard. Please note that:  
+        - Whole blood donations can be made **once every 3 months**.  
+        - Partial donations (platelets/plasma) can be made **once per month**.  
+    </div>
+</body>
+</html>

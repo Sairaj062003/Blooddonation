@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html
+<head>
+<link href="../STYLE/HomeSheet.css" rel="stylesheet"  />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<script src="../SCRIPT/MenuScript.js">
+</script>
+<title>FIND A BLOOD BANK</title>
+</head>
+
+<body style="z-index:1;">
+  <header class="header">
+    <div class="header__container">
+        <div class="header__logo">
+            <img src="../RESOURCES/images.jpeg" alt="LifeFlow Logo" height="80">
+        </div>
+        <nav class="main-nav">
+            <ul>
+                <li><a href="Home.html" class="active">Home</a></li>
+                <li><a href="SignUp.html">Sign Up</a></li>
+                <li><a href="Login.html">Log In</a></li>
+                <li><a href="./About Us.html">About Us</a></li>
+                <li><a href="./CONTACT US.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+
+
+<nav id="MENU" class="side-nav">
+    
+    <a href="Home.html">Home</a>
+    <a href="FIND-BLOODBANK.html">Find a Blood Bank</a>
+    <a href="REQUEST BLOOD.html">Donate Blood</a>
+    <a href="searchreq.html">Find a Donor</a>
+    <a href="Donation Guidelines.html">Donation Guidelines</a>
+    <a href="FIND-HOSPITAL.html">Nearest Hospital</a>
+    <a href="SignUpDoctor.html">Sign Up (Doctors)</a>
+</nav>
+
+
+
+
+<div id="main" style=" z-index:1 ; position: relative ; left: 250px;" >
+
+<h style="font-size:64px; font-family:'Segoe UI Symbol'; color:rgb(255,0,0); font:'Segoe UI Symbol'">LOCATE A BLOOD BANK</h><br><br>
+
+<p>In the digital age, finding a nearby blood bank is just a few clicks away!</p>
+<p>
+  With the power of Google Maps API (and our incredibly dedicated—though unpaid—developer), you can quickly locate the <br> nearest blood bank. Simply enter any location, or, if you're feeling adventurous, let us detect your location for an even faster<br> experience.
+
+  Helping save lives has never been this easy. Try it now!</p>
+
+<br>
+
+<div id="map" onMouseOver="focusMap()" onMouseOut="blurMap()"></div>
+    <script>
+      var map;
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          center: {lat: -34.397, lng: 150.644},
+          zoom: 8
+        });
+		
+		var infoWindow;
+		infoWindow= new google.maps.InfoWindow;
+        if (navigator.geolocation) {
+          navigator.geolocation.getCurrentPosition(function(position) {
+            var pos = {
+              lat: position.coords.latitude,
+              lng: position.coords.longitude
+            };
+
+            infoWindow.setPosition(pos);
+            infoWindow.setContent('You are here.');
+            infoWindow.open(map);
+            map.setCenter(pos);
+          }, function() {
+            handleLocationError(true, infoWindow, map.getCenter());
+          });
+        } else {
+          handleLocationError(false, infoWindow, map.getCenter());
+        }
+      }
+
+      function handleLocationError(browserHasGeolocation, infoWindow, pos) {
+        infoWindow.setPosition(pos);
+        infoWindow.setContent(browserHasGeolocation ?
+                              'Error: Enter your location manually.' :
+                              'Error: Your browser doesn\'t support geolocation.');
+        infoWindow.open(map);
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAF0EW-1_qEcK9-uYaQR9nBsSs_iwz75zM&callback=initMap"
+    async defer></script>
+
+</div>
+<p style="font-size:large;">Use the map above to find blood banks near the location you entered, or your location, if you chose to give your browser your location when it asked you to. Now you might notice there actually are no bloodbanks, which kinda makes this website a scam. But hear us out, it takes huge efforts to bookmark and upload all the blood bank locations in the country into a DB which is then fed to the Map, sadly we don't have the manpower to accomplish the task.</p>
+</div>
+
+<footer class="footer">
+  <div class="footer__content">
+      <p>&copy; 2025 LifeFlow. All rights reserved.</p>
+      <div class="footer__links">
+          <a href="About Us.html">About</a>
+          <a href="CONTACT US.html">Contact</a>
+          <a href="Donation Guidelines.html">Guidelines</a>
+      </div>
+  </div>
+</footer>
+
+
+</body>
+</html>
